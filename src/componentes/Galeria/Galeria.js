@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import UserContext from '../../context/context'
 import Perfil from '../Perfil/Perfil'
 import './Galeria.css'
 
-const Galeria = ({nombres}) => {
+const Galeria = () => {
     // const {nombres, edades} = props; // desectructuracion de props (se reciben como un objeto)
 
-    console.log(nombres)
+    let users = useContext(UserContext);
+
 
     return (
         <div className='contenedor-cards'>
             {
-                nombres.map(item => {
+                users.nombres.map(item => {
                         return <Perfil nombre={item.name} />
                 })
             }

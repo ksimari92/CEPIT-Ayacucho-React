@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import UserContext from '../../context/context';
 
 const Eventos = () => {
     const [nombre, setNombre] = useState();
+
+    const users = useContext(UserContext)
+    console.log(users)
 
     const handleCambiarNombre = () => {
         if (nombre === "Juan") {
